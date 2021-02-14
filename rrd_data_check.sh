@@ -23,14 +23,14 @@
 
 #!/bin/bash
 
-rm rrd_checkresults.txt
+rm rrd_checkresults.txt > /dev/null
 input=$1
 
 if [[ $1 = "" ]]
-then input=--h
+then input=-h
 fi
 
-if [[ $input = --h ]] || [[ $input = --H ]]
+if [[ $input = -h ]] || [[ $input = -H ]]
 then
   echo " "
   echo "~~~~~~~~~~~"
@@ -38,9 +38,9 @@ then
   echo "~~~~~~~~~~~"
   echo "Usage: ./rrd_data_check.sh [option]"
   echo "  options:"
-  echo "    --i : Interactive Mode"
-  echo "    --a : Automatice mode (Use script defaults"
-  echo "    --h : Show this help"
+  echo "    -i : Interactive Mode"
+  echo "    -a : Automatice mode (Use script defaults"
+  echo "    -h : Show this help"
   echo ""
 
 echo "A note if you are using cacti boost you should either check against a longer length of time or after Boost has run"
@@ -51,7 +51,7 @@ echo " "
 exit 0
 fi
 
-if [[ $input = --i ]] || [[ $input = --I ]]
+if [[ $input = -i ]] || [[ $input = -I ]]
 then
 echo "script in interactive mode"
 
@@ -64,7 +64,7 @@ read -r past_min
 fi
 
 
-if [[ $input = --a ]] || [[ $input = --A ]]
+if [[ $input = -a ]] || [[ $input = -A ]]
 then
 echo "Automatic mode selected default are 10 minutes and looking in <cacti dir>/rra"
 rrd_path="/var/www/html/cacti/rra/*"
