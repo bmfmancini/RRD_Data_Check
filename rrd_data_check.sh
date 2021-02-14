@@ -49,6 +49,7 @@ echo "as with Boost the RRD files are not constantly updated so it can be normal
 echo "If you see an abnormal amount of Dead RRD messeges from this script that may be the cause so either wait for the Boost poller to finish"
 echo "Or chooise a longer length of time"
 echo " "
+exit 0
 fi
 
 if [[ $input = --i ]] || [[ $input = --I ]]
