@@ -11,6 +11,27 @@ to ensure your Cacti graphs are working properly especially on large systems whe
 be hard to keep track of hundreds/thousands of graphs to ensure they are working
 
 
+### Example Output
+
+/var/www/html/cacti/rra/1_1_1_1_active_60.rrd Dead RRD the Last 11 values were NaN
+/var/www/html/cacti/rra/1_1_1_6_5min_cpu_134.rrd Dead RRD the Last 11 values were NaN
+/var/www/html/cacti/rra/mancini-sw1-test_nonunicast_out_256.rrd Dead RRD the Last 11 values were NaN
+/var/www/html/cacti/rra/mancini-sw1-test_traffic_in_130.rrd Dead RRD the Last 11 values were NaN
+/var/www/html/cacti/rra/mancini-sw1-test_traffic_in_131.rrd Dead RRD the Last 11 values were NaN
+/var/www/html/cacti/rra/mancini-sw1-test_traffic_in_132.rrd Dead RRD the Last 11 values were NaN
+/var/www/html/cacti/rra/mancini-sw1-test_traffic_in_133.rrd Dead RRD the Last 11 values were NaN
+
+Manually looking at the RRD yields the same data
+
+
+RRD_Data_Check# rrdtool fetch /var/www/html/cacti/rra/mancini-sw1-test_traffic_in_130.rrd  LAST  -s 1613268033
+
+1613268060: -nan -nan
+1613268120: -nan -nan
+1613268180: -nan -nan
+1613268240: -nan -nan
+
+
 ## Script Options
 --a sets the script to automatic mode which will look at the past 10 minutes of data
 if you would like Automode to default to your rra folder and a specific timeframe update the
