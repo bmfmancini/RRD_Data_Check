@@ -34,11 +34,11 @@ RRD_Data_Check# rrdtool fetch /var/www/html/cacti/rra/mancini-sw1-test_traffic_i
 ```
 
 ## Script Options
---a sets the script to automatic mode which will look at the past 10 minutes of data
+-a sets the script to automatic mode which will look at the past 10 minutes of data
 if you would like Automode to default to your rra folder and a specific timeframe update the
 rrd_path and past_min variables
  
---i sets the script into interactive mode which allows you to set which path and timeframe
+-i sets the script into interactive mode which allows you to set which path and timeframe
  
 -h prints this menu
  
