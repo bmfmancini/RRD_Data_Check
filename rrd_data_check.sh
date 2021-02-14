@@ -66,6 +66,7 @@ fi
 
 if [[ $input = --a ]] || [[ $input = --A ]]
 then
+echo "Automatic mode selected default are 10 minutes and looking in <cacti dir>/rra"
 rrd_path="/var/www/html/cacti/rra/*"
 past_min="10"
 fi
@@ -80,9 +81,9 @@ scan=$(rrdtool fetch $rrd LAST -s $timestamp | grep nan | wc -l  )
 
 if (( $scan >  $past_min ))
 then 
-echo $rrd "Dead RRD" the Last $scan values were NaN
-## Log these bad results to a file
+echo $rrd "Dead RRD or Device Offline " the Last $scan values were NaN
 
+## Log these bad results to a file
 echo  $rrd "Dead RRD" the Last $scan values were NaN >> rrd_checkresults.txt
 fi
 done
