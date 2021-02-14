@@ -27,8 +27,7 @@ rm rrd_checkresults.txt
 input=$1
 
 if [[ $1 = "" ]]
-then input=--a
-echo "No options selected so running in Automation mode see --h for help menu"
+then input=--h
 fi
 
 if [[ $input = --h ]] || [[ $input = --H ]]
@@ -39,9 +38,9 @@ then
   echo "~~~~~~~~~~~"
   echo "Usage: ./rrd_data_check.sh [option]"
   echo "  options:"
-  echo "    -i : Interactive Mode"
-  echo "    -a : Automatice mode (Use script defaults"
-  echo "    -h : Show this help"
+  echo "    --i : Interactive Mode"
+  echo "    --a : Automatice mode (Use script defaults"
+  echo "    --h : Show this help"
   echo ""
 
 echo "A note if you are using cacti boost you should either check against a longer length of time or after Boost has run"
