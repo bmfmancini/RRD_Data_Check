@@ -33,16 +33,16 @@ fi
 
 if [[ $input = --h ]] || [[ $input = --H ]]
 then
-echo " "
-echo "--a sets the script to automatic mode which will look at the past 10 minutes of data"
-echo "if you would like Automode to default to your rra folder and a specific timeframe update the"
-echo "rrd_path and past_min variables"
-echo " "
-echo "--i sets the script into interactive mode which allows you to set which path and timeframe"
-echo " "
-echo "-h prints this menu"
-echo " "
-echo " "
+  echo " "
+  echo "~~~~~~~~~~~"
+  echo " U S A G E"
+  echo "~~~~~~~~~~~"
+  echo "Usage: ./rrd_data_check.sh [option]"
+  echo "  options:"
+  echo "    -i : Interactive Mode"
+  echo "    -a : Automatice mode (Use script defaults"
+  echo "    -h : Show this help"
+  echo ""
 
 echo "A note if you are using cacti boost you should either check against a longer length of time or after Boost has run"
 echo "as with Boost the RRD files are not constantly updated so it can be normaly to show NaN values in the RRD for a period of time"
