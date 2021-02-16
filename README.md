@@ -10,6 +10,9 @@ or the RRD file is not reciving data from the datasource this can be used as a Q
 to ensure your Cacti graphs are working properly especially on large systems where it can 
 be hard to keep track of hundreds/thousands of graphs to ensure they are working
 
+This script will also tell if a specific data source in the RRA is not populating but the
+graph is otherwise fine it could be due to a bad OID or device response
+
 
 ### Example Output
 
